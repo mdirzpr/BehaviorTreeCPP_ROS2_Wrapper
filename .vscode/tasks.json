@@ -67,14 +67,7 @@
             "label": "purge",
             "detail": "Purge workspace by deleting all generated files.",
             "type": "shell",
-            "command": "sudo rm -fr build install log; sudo py3clean .",
-            "problemMatcher": []
-        },
-        {
-            "label": "source",
-            "detail": "Source workspace",
-            "type": "shell",
-            "command": "source /opt/ros/humble/setup.bash",
+            "command": "rm -fr build install log; py3clean .",
             "problemMatcher": []
         },
         // Linting and static code analysis tasks
@@ -118,7 +111,9 @@
             "type": "ament",
             "task": "cpplint",
             "path": "src/",
-            "problemMatcher": "$ament_cpplint",
+            "problemMatcher": [
+                "$ament_cpplint"
+            ],
             "presentation": {
                 "panel": "dedicated",
                 "reveal": "silent",
@@ -131,7 +126,9 @@
             "type": "ament",
             "task": "cppcheck",
             "path": "src/",
-            "problemMatcher": "$ament_cppcheck",
+            "problemMatcher": [
+                "$ament_cppcheck"
+            ],
             "presentation": {
                 "panel": "dedicated",
                 "reveal": "silent",
@@ -149,7 +146,9 @@
             "type": "ament",
             "task": "lint_cmake",
             "path": "src/",
-            "problemMatcher": "$ament_lint_cmake",
+            "problemMatcher": [
+                "$ament_lint_cmake"
+            ],
             "presentation": {
                 "panel": "dedicated",
                 "reveal": "silent",
@@ -162,7 +161,9 @@
             "type": "ament",
             "task": "flake8",
             "path": "src/",
-            "problemMatcher": "$ament_flake8",
+            "problemMatcher": [
+                "$ament_flake8"
+            ],
             "presentation": {
                 "panel": "dedicated",
                 "reveal": "silent",
@@ -175,7 +176,9 @@
             "type": "ament",
             "task": "pep257",
             "path": "src/",
-            "problemMatcher": "$ament_pep257",
+            "problemMatcher": [
+                "$ament_pep257"
+            ],
             "presentation": {
                 "panel": "dedicated",
                 "reveal": "silent",
@@ -188,7 +191,9 @@
             "type": "ament",
             "task": "xmllint",
             "path": "src/",
-            "problemMatcher": "$ament_xmllint",
+            "problemMatcher": [ 
+                "$ament_xmllint",
+            ],
             "presentation": {
                 "panel": "dedicated",
                 "reveal": "silent",
@@ -251,25 +256,18 @@
             "type": "shell",
             "command": "./setup.sh",
             "problemMatcher": []
-        },
-        {
-            "label": "add submodules from .repos",
-            "detail": "Create a git submodule for all repositories in your .repos file",
-            "type": "shell",
-            "command": "python3 .devcontainer/repos_to_submodules.py",
-            "problemMatcher": []
         }
     ],
     "inputs": [
         {
-            "id": "package",
-            "type": "promptString",
-            "description": "Package name"
+          "id": "package",
+          "type": "promptString",
+          "description": "Package name"
         },
         {
             "id": "package_to_build",
             "type": "promptString",
             "description": "Package name to build"
         }
-    ]
+      ]
 }
