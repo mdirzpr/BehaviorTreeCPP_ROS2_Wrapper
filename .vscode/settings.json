@@ -46,6 +46,7 @@
         "DCMAKE",
         "deque",
         "devcontainer",
+        "groot",
         "ints",
         "noqa",
         "pytest",
