@@ -265,6 +265,11 @@
             "id": "package",
             "type": "promptString",
             "description": "Package name"
+        },
+        {
+            "id": "package_to_build",
+            "type": "promptString",
+            "description": "Package name to build"
         }
     ]
 }
