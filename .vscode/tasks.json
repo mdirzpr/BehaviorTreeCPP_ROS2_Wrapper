@@ -19,7 +19,7 @@
             "label": "build select",
             "detail": "Build workspace (with --package-select)",
             "type": "shell",
-            "command": "./build_with_select.sh",
+            "command": "bash ./build_with_select.sh",
             "options": {
                 "env": {
                     "PACKAGE_TO_BUILD": "${input:package_to_build}"
